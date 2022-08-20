@@ -36,8 +36,10 @@
   // 配列データの追加:配列の変数名.push(追加したいデータ)
   todo.push('歯医者に行く');
   // for...of文:繰り返しの一種
+  // テンプレート文字列:``(バックティック)で囲んだ部分のテキストを文字列データにする
   for(let item of todo){
-    console.log(item);
+    const li = `<li>${item}</li>`;
+    console.log(li);
   }
 </script>
 </body>
