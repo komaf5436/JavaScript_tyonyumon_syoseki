@@ -18,7 +18,9 @@
 <main>
 <div class="container">
 <section>
-
+  <h1>やることリスト</h1>
+  <ul id="list">
+  </ul>
 </section>
 </div><!-- /.container -->
 </main>
@@ -39,7 +41,8 @@
   // テンプレート文字列:``(バックティック)で囲んだ部分のテキストを文字列データにする
   for(let item of todo){
     const li = `<li>${item}</li>`;
-    console.log(li);
+    // insertAdjacentHTMLメソッド:取得した要素の前後、または子要素として、別の要素を挿入
+    document.getElementById('list').insertAdjacentHTML('beforeend', li);
   }
 </script>
 </body>
