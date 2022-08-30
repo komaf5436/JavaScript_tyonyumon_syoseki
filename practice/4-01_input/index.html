@@ -19,8 +19,10 @@
 <div class="container">
 <section>
   <form action="#" id="form">
+    <input type="text" name="word">
     <input type="submit" value="検索">
   </form>
+  <p id="output"></p>
 </section>
 </div><!-- /.container -->
 </main>
@@ -33,8 +35,12 @@
   'use strict';
 
   // 要素にイベントを設定する:取得した要素.onsubmit = function(){処理内容};
-  document.getElementById('form').onsubmit = function(){
-    console.log('クリックされました');
+  document.getElementById('form').onsubmit = function(event){
+    // タグの基本動作をキャンセルする
+    event.preventDefault();
+    // 入力内容を読み取る:取得した<form>要素.読み取りたいフォーム部品のname属性.value;
+    const search = document.getElementById('form').word.value;
+    document.getElementById('output').textContent = '「${search}」の検索中...';
   };
 </script>
 </body>
